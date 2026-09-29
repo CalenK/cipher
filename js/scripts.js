@@ -1,23 +1,30 @@
-window.prompt("Enter a sentence:");
+const sentence = window.prompt("Enter a sentence:", "");
 
-function capitalize(firstLetter, lastLetter) {
-  const firstAndLast = toString(toUpperCase(firstLetter, lastLetter));
-  return firstAndLast;
+function capitalize() {
+  const firstLetter = sentence[0];
+  const lastLetter = sentence[sentence.length - 1];
+  const first = firstLetter.toUpperCase();
+  const last = lastLetter.toUpperCase();
+  return first + last;
 }
 
-function reverse(firstLetter, lastLetter) {
-  const reversed = (firstLetter, lastLetter);
-  return reversed;
+function reverse(capitalizeResult) {
+  return capitalizeResult[1] + capitalizeResult[0];
 }
 
-function calling(capitalize, reverse) {
-  const cipher = capitalize() + reverse() + window.prompt();
-  return capitalize() + reverse() + window.prompt();
+function calling() {
+  const capitalizeResult = capitalize();
+  window.alert("capitalizeResult, " + capitalizeResult);
+  const reverseResult = reverse(capitalizeResult);
+  window.alert("reverseResult, " + reverseResult);
+  return sentence + reverseResult;
 }
 
-function count(calling) {
-  const newCipher = calling() / 4;
-  return newCipher;
+function count() {
+  const callingResult = calling();
+  window.alert("callingResult, " + callingResult);
+  const divisonResult = Math.floor(sentence.length / 2);
+  return sentence[divisonResult] + sentence;
 }
 
 window.alert(count());
